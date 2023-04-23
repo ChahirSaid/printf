@@ -4,6 +4,7 @@
  * @s: The string to be measured.
  * Return: The length of the string.
  */
+
 int _strlen(const char *s)
 {
 	int len = 0;
@@ -12,6 +13,28 @@ int _strlen(const char *s)
 	len++;
 	return (len);
 }
+
+
+/**
+ * _printf_c - Prints a single character to the standard output.
+ * @c: The character to be printed.
+ */
+
+void _printf_c(char c)
+{
+	_putchar(c);
+}
+
+/**
+ * _printf_s - Prints a string to the standard output.
+ * @s: The string to be printed.
+ */
+
+void _printf_s(const char *s)
+{
+	_putstr(s);
+}
+
 /**
  * _printf - Prints a formatted string to the standard output.
  * @format: The format string.
@@ -22,10 +45,10 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i, count = 0;
+	char c;
 	const char *str;
 
 	va_start(args, format);
-
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
@@ -35,31 +58,28 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 				{
-					char c = va_arg(args, int);
-
-					count += write(1, &c, 1);
+					c = va_arg(args, int);
+					_printf_c(c);
 					break;
 				}
 				case 's':
 				{
 					str = va_arg(args, const char *);
-					count += write(1, str, _strlen(str));
+					_printf_s(str);
 					break;
 				}
 				case '%':
 				{
-					count += write(1, "%", 1);
+					_printf_c('%');
 					break;
 				}
 				default:
-				{
-					count += write(1, &format[i - 1], 2);
 					break;
 				}
 			}
 		}
 		else
-		count += write(1, &format[i], 1);
+			_putchar(format[i]);
 	}
 	va_end(args);
 	return (count);
