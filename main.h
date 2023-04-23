@@ -13,7 +13,8 @@
  * @specifier: conversion specifier
  * @f: function pointer to corresponding print function
  */
-typedef struct convert {
+typedef struct convert
+{
 	char specifier;
 	int (*f)(va_list);
 } convert_t;
