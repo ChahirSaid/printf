@@ -6,25 +6,25 @@
  * @format: char
  * Return: length
  */
-int handle_format_specifier(va_list args, char format)
+int handle_format_specifier(va_list args, const char *format)
 {
-	convert list[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"d", print_numbers},
-		{"i", print_numbers},
-		{NULL, NULL}
+	convert_t list[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'d', print_numbers},
+		{'i', print_numbers},
+		{(char)0, (int(*)(va_list))0}
 	};
 	int i, length = 0;
 	int flag = 1;
 
-	if (format == ' ' || format == '\0')
+	if (*format == ' ' || *format == '\0')
 		return (-1);
 
-	for (i = 0; list[i].type != NULL; i++)
+	for (i = 0; list[i].specifier != '\0'; i++)
 	{
-		if (format == list[i].type[0])
+		if (*format == list[i].specifier)
 		{
 			flag = 0;
 			length = list[i].f(args);
@@ -33,7 +33,7 @@ int handle_format_specifier(va_list args, char format)
 	if (flag == 1)
 	{
 		_putchar('%');
-		_putchar(format);
+		_putchar(*format);
 		length = 2;
 	}
 	return (length);
@@ -58,7 +58,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			output = handle_format_specifier(args, format[++i]);
+			output = handle_format_specifier(args, (char *)&format[++i]);
 			if (output == -1)
 			return (-1);
 		length += output;

@@ -36,6 +36,7 @@ int print_string(va_list args)
  */
 int print_percent(va_list args)
 {
+	(void)args;
 	_putchar('%');
 	return (1);
 }
@@ -49,12 +50,10 @@ int print_numbers(va_list args)
 {
 	int num = va_arg(args, int);
 	int count = 0;
-	int sign = 0;
 	unsigned int n;
 
 	if (num < 0)
 	{
-		sign = 1;
 		n = -num;
 		_putchar('-');
 		count++;
