@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * _printf - Printf Function
  * @format: const char.
@@ -28,7 +29,7 @@ while (*format != '\0')
 			{
 				char *s = va_arg(args, char *);
 
-				numb_chars_printed += write(1, s, srtlen(s));
+				numb_chars_printed += write(1, s, strlen(s));
 				break;
 			}
 			default:{
