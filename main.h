@@ -7,7 +7,8 @@
 #include <stdarg.h>
 
 /**--Functions--*/
-int _putchar(int);
+int _putchar(char c);
 int _putstr(char);
 int _putint (int);
 
+#endif
