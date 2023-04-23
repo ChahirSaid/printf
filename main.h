@@ -8,9 +8,9 @@
 #include <string.h>
 
 /**--Functions--*/
+int _strlen(const char *s);
 int _printf(const char *format, ...);
 int _putchar(char c);
-int _putstr(char *s);
 int _putint (int *num);
 
 #endif
