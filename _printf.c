@@ -20,12 +20,14 @@ while (*format != '\0')
 			case 'c':
 			{
 				char c = va_arg(args, int);
+
 				numb_chars_printed += write(1, &c, 1);
 				break;
 			}
 			case 's':
 			{
 				char *s = va_arg(args, char *);
+
 				numb_chars_printed += write(1, s, srtlen(s));
 				break;
 			}
