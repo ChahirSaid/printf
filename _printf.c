@@ -1,40 +1,65 @@
 #include "main.h"
 /**
- * _printf - Printf Function
- * @format: const char.
- * Return: num_chars_printed.
+ * _strlen - Computes the length of a string.
+ * @s: The string to be measured.
+ *
+ * Return: The length of the string.
+ */
+int _strlen(const char *s)
+{
+    int len = 0;
+
+    while (*s++)
+        len++;
+
+    return (len);
+}
+
+/**
+ * _printf - Prints a formatted string to the standard output.
+ * @format: The format string.
+ *
+ * Return: The number of characters printed.
  */
 int _printf(const char *format, ...)
 {
-int numb_chars_printed;
-va_list args;
-va_start(args, format);
-numb_chars_printed = 0;
-while (format != '\0')
-{
-if (format == '%')
-{
-switch (++format)
-{
-case 'c': {
-char c = va_arg(args, int);
-numb_chars_printed += write(1, &c, 1);
-break;
-}
-case 's': {
-char str = va_arg(args, char);
-numb_chars_printed += write(1, str, srtlen(str));
-break;
-}
-default:{
-break;
-}
-}
-}
-else
-numb_chars_printed += write(1, format, 1);
-format++;
-}
-va_end(args);
-return (numb_chars_printed);
+    va_list args;
+    int i, count = 0;
+    const char *str;
+
+    va_start(args, format);
+
+    for (i = 0; format[i]; i++)
+    {
+        if (format[i] == '%')
+        {
+            i++;
+            switch (format[i])
+            {
+		case 'c':{
+		char c = va_arg(args, int);
+			count += write(1, &c, 1); 
+			break;
+		}
+                case 's':
+                    str = va_arg(args, const char *);
+                    count += write(1, str, _strlen(str));
+                    break;
+                case '%':
+                    count += write(1, "%", 1);
+                    break;
+                default:
+                    count += write(1, &format[i - 1], 2);
+                    break;
+            }
+        }
+        else
+        {
+            count += write(1, &format[i], 1);
+        }
+    }
+
+    va_end(args);
+
+    return (count);
 }
