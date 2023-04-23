@@ -7,5 +7,7 @@
 #include <stdarg.h>
 
 /**--Functions--*/
-int _putchar(char);
+int _putchar(int);
+int _putstr(char);
+int _putint (int);
 
