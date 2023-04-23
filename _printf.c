@@ -6,34 +6,39 @@
  */
 int _printf(const char *format, ...)
 {
-int numb_chars_printed;
+int numb_chars_printed = 0;
 va_list args;
 va_start(args, format);
-numb_chars_printed = 0;
-while (format != '\0')
+
+while (*format != '\0')
 {
-if (format == '%')
-{
-switch (++format)
-{
-case 'c': {
-char c = va_arg(args, int);
-numb_chars_printed += write(1, &c, 1);
-break;
-}
-case 's': {
-char str = va_arg(args, char);
-numb_chars_printed += write(1, str, srtlen(str));
-break;
-}
-default:{
-break;
-}
-}
-}
-else
-numb_chars_printed += write(1, format, 1);
-format++;
+	if (*format == '%')
+	{
+		format++;
+		switch (*format)
+		{
+			case 'c':
+			{
+				char c = va_arg(args, int);
+				numb_chars_printed += write(1, &c, 1);
+				break;
+			}
+			case 's':
+			{
+				char *s = va_arg(args, char *);
+				numb_chars_printed += write(1, s, srtlen(s));
+				break;
+			}
+			default:{
+				break;
+			}
+		}
+	}
+	else
+	{
+	numb_chars_printed += write(1, format, 1);
+	}
+	format++;
 }
 va_end(args);
 return (numb_chars_printed);
