@@ -30,7 +30,7 @@ int print_string(va_list args)
 }
 
 /**
- * print_percent - print a percent sign (\% also works)
+ * print_percent - print a percent sign
  * @args: va_list
  * Return: 1
  */
