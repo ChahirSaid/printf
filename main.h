@@ -8,7 +8,7 @@
 
 /**--Functions--*/
 int _putchar(char c);
-int _putstr(char);
-int _putint (int);
+int _putstr(char *s);
+int _putint (int *num);
 
 #endif
