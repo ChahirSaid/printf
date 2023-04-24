@@ -86,6 +86,14 @@ alex@ubuntu:~/c/printf$
 alex@ubuntu:~/c/printf$ <br>
 </code></pre>
 <ul>
-<li></li>
+<li>We strongly encourage you to work all together on a set of tests</li>
+<li>If the task does not specify what to do with an edge case, do the same as <code>printf</code></li>
+</ul>
+# <h3>Copyright - Plagiarism</h3>
+<ul>
+<li>You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.</li>
+<li>You will not be able to meet the objectives of this or any following project by copying and pasting someone else&rsquo;s work. </li>
+<li>You are not allowed to publish any content of this project.</li>
+<li>Any form of plagiarism is strictly forbidden and will result in removal from the program.</li>
 </ul>
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Written+by+Said+and+Othmane" alt="Typing SVG" /></a>
