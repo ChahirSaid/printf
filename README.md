@@ -89,7 +89,7 @@ alex@ubuntu:~/c/printf$ <br>
 <li>We strongly encourage you to work all together on a set of tests</li>
 <li>If the task does not specify what to do with an edge case, do the same as <code>printf</code></li>
 </ul>
-# <h3>Copyright - Plagiarism</h3>
+#<h3>Copyright - Plagiarism</h3>
 <ul>
 <li>You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.</li>
 <li>You will not be able to meet the objectives of this or any following project by copying and pasting someone else&rsquo;s work. </li>
