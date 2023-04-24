@@ -12,9 +12,9 @@
 <li>You might want to look at the gcc flag <code>-Wno-format</code> when testing with your <code>_printf</code> and the standard printf. Example of test file that you could use: </li><br>
 </ul>
 <pre><code>alex@ubuntu:~/c/printf$ cat main.c 
-#include <limits.h>
-#include <stdio.h>
-#include "main.h"
+#include &lt;limits.h&gt;
+#include &lt;stdio.h&gt;
+#include &quot;main.h&quot;
 
 /**
  * main - Entry point
@@ -28,38 +28,38 @@ int main(void)
     unsigned int ui;
     void *addr;
 
-    len = _printf("Let's try to printf a simple sentence.\n");
-    len2 = printf("Let's try to printf a simple sentence.\n");
+    len = _printf(&quot;Let&#39;s try to printf a simple sentence.\n&quot;);
+    len2 = printf(&quot;Let&#39;s try to printf a simple sentence.\n&quot;);
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
-    _printf("Length:[%d, %i]\n", len, len);
-    printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
-    _printf("Unsigned:[%u]\n", ui);
-    printf("Unsigned:[%u]\n", ui);
-    _printf("Unsigned octal:[%o]\n", ui);
-    printf("Unsigned octal:[%o]\n", ui);
-    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    _printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n", "I am a string !");
-    _printf("Address:[%p]\n", addr);
-    printf("Address:[%p]\n", addr);
-    len = _printf("Percent:[%%]\n");
-    len2 = printf("Percent:[%%]\n");
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+    _printf(&quot;Length:[%d, %i]\n&quot;, len, len);
+    printf(&quot;Length:[%d, %i]\n&quot;, len2, len2);
+    _printf(&quot;Negative:[%d]\n&quot;, -762534);
+    printf(&quot;Negative:[%d]\n&quot;, -762534);
+    _printf(&quot;Unsigned:[%u]\n&quot;, ui);
+    printf(&quot;Unsigned:[%u]\n&quot;, ui);
+    _printf(&quot;Unsigned octal:[%o]\n&quot;, ui);
+    printf(&quot;Unsigned octal:[%o]\n&quot;, ui);
+    _printf(&quot;Unsigned hexadecimal:[%x, %X]\n&quot;, ui, ui);
+    printf(&quot;Unsigned hexadecimal:[%x, %X]\n&quot;, ui, ui);
+    _printf(&quot;Character:[%c]\n&quot;, &#39;H&#39;);
+    printf(&quot;Character:[%c]\n&quot;, &#39;H&#39;);
+    _printf(&quot;String:[%s]\n&quot;, &quot;I am a string !&quot;);
+    printf(&quot;String:[%s]\n&quot;, &quot;I am a string !&quot;);
+    _printf(&quot;Address:[%p]\n&quot;, addr);
+    printf(&quot;Address:[%p]\n&quot;, addr);
+    len = _printf(&quot;Percent:[%%]\n&quot;);
+    len2 = printf(&quot;Percent:[%%]\n&quot;);
+    _printf(&quot;Len:[%d]\n&quot;, len);
+    printf(&quot;Len:[%d]\n&quot;, len2);
+    _printf(&quot;Unknown:[%r]\n&quot;);
+    printf(&quot;Unknown:[%r]\n&quot;);
     return (0);
 }
 alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 alex@ubuntu:~/c/printf$ ./printf
-Let's try to printf a simple sentence.
-Let's try to printf a simple sentence.
+Let&#39;s try to printf a simple sentence.
+Let&#39;s try to printf a simple sentence.
 Length:[39, 39]
 Length:[39, 39]
 Negative:[-762534]
@@ -82,6 +82,7 @@ Len:[12]
 Len:[12]
 Unknown:[%r]
 Unknown:[%r]
+alex@ubuntu:~/c/printf$
 alex@ubuntu:~/c/printf$ <br>
 </code></pre>
 <ul>
