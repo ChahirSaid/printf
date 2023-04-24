@@ -5,13 +5,13 @@
 <h4>3. What one has not experienced, one will never understand in print</h4><br>
 <h3>Compilation</h4>
 <ul>
-<li>Your code will be compiled this way:</li><br/>
+<li>Your code will be compiled this way:</li>
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 <li>As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)</li>
 <li>Our main files will include your main header file (main.h): #include main.h</li>
 <li>You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf. Example of test file that you could use: </li><br>
 </ul>
-alex@ubuntu:~/c/printf$ cat main.c 
+<pre><code>alex@ubuntu:~/c/printf$ cat main.c 
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
@@ -83,4 +83,5 @@ Len:[12]
 Unknown:[%r]
 Unknown:[%r]
 alex@ubuntu:~/c/printf$ <br>
+</code></pre>
 <h1>Written by Said and Othmane <h1>
