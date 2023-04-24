@@ -7,9 +7,9 @@
 <ul>
 <li>Your code will be compiled this way:</li>
 <pre><code>$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c</pre></code>
-<li>As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)</li>
-<li>Our main files will include your main header file (main.h): #include main.h</li>
-<li>You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf. Example of test file that you could use: </li><br>
+<li>As a consequence, be careful not to push any c file containing a <code>main</code> function in the root directory of your project (you could have a <code>test</code> folder containing all your tests files including <code>main</code> functions)</li>
+<li>Our main files will include your main header file (<code>main.h</code>): <code>#include main.h</code></li>
+<li>You might want to look at the gcc flag <code>-Wno-format</code> when testing with your <code>_printf</code> and the standard printf. Example of test file that you could use: </li><br>
 </ul>
 <pre><code>alex@ubuntu:~/c/printf$ cat main.c 
 #include <limits.h>
@@ -84,4 +84,7 @@ Unknown:[%r]
 Unknown:[%r]
 alex@ubuntu:~/c/printf$ <br>
 </code></pre>
+<ul>
+<li></li>
+</ul>
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Written+by+Said+and+Othmane" alt="Typing SVG" /></a>
