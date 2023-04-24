@@ -5,7 +5,7 @@
 <h4>3. What one has not experienced, one will never understand in print</h4><br>
 <h3>Compilation</h4>
 <ul>
-Your code will be compiled this way:
+<li>Your code will be compiled this way:</li><br/>
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 <li>As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)</li>
 <li>Our main files will include your main header file (main.h): #include main.h</li>
