@@ -1,12 +1,12 @@
-<h1>0x11. C - printf</h><br><h3></h3>
-<h4>0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life</h4><br>
-<h4>1. Education is when you read the fine print. Experience is what you get if you don't</h4><br>
-<h4>2. With a face like mine, I do better in print</h4><br>
-<h4>3. What one has not experienced, one will never understand in print</h4><br>
-<h3>Compilation</h4>
+#<h1>0x11. C - printf</h><br><h3></h3>
+# <h4>0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life</h4><br>
+# <h4>1. Education is when you read the fine print. Experience is what you get if you don't</h4><br>
+# <h4>2. With a face like mine, I do better in print</h4><br>
+# <h4>3. What one has not experienced, one will never understand in print</h4><br>
+# <h3>Compilation</h4>
 <ul>
 <li>Your code will be compiled this way:</li>
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+<pre><code>$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c</pre></code>
 <li>As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)</li>
 <li>Our main files will include your main header file (main.h): #include main.h</li>
 <li>You might want to look at the gcc flag -Wno-format when testing with your _printf and the standard printf. Example of test file that you could use: </li><br>
